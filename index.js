@@ -11,8 +11,8 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const { default: slugify } = require("slugify");
 const port = process.env.PORT || 5000;
 
-const client_URL = "http://localhost:5173"; 
-const server_URL = "http://localhost:5000";
+const client_URL = "https://hiremaster-client.web.app"; 
+const server_URL = "https://hiremaster-s.onrender.com";
 
 // const client_URL = "https://hiremaster-client.web.app";
 // const server_URL = "";
@@ -45,7 +45,7 @@ const io = require("socket.io")(server, {
 app.use(cookieParser());
 app.use(
   cors({
-    origin: [client_URL],
+    origin: [client_URL, server_URL],
     credentials: true,
   })
 );
